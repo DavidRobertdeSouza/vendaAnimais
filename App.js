@@ -1,112 +1,80 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
-import React from 'react';
-import type {Node} from 'react';
+import React, {useState, useEffect} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
   View,
+  KeyboardAvoidingView,
+  Image,
+  TextInput,
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  Animated,
+  Keyboard
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+export default function App() {
 
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View style={styles.background}>
+      <View style={styles.containerLogo}>
+        <Image 
+        style={{
+          width: 147,
+          height: 234,
+        }}
+        source={require('./src/assets/123.png')} />
+      </View>
+      <View style={styles.containerText}>
+        <Text style={styles.text}>
+        Bem vindo!
+        </Text>
+        <Text style={styles.footer}>
+          Desenvolvido por Empresa {'\n'}
+          2021
+        </Text>
+      </View>
     </View>
   );
-};
-
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
-};
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  background: {
+    flex: 1,
+    backgroundColor: 'white',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
-export default App;
+  containerLogo: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 120
+  },
+
+  containerText: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+
+  text:{
+    color: '#6E4518',
+    fontSize: 28,
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
+  footer:{
+    position: 'absolute',
+    textAlign: 'center',
+    letterSpacing: -0.41,
+    color: '#2B58FA',
+    fontSize: 14,
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    left: '7.73%',
+    right: '7.73%',
+    top: '82.03%',
+    bottom: 14.4,
+  }
+});
