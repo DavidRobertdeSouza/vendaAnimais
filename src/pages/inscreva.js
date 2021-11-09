@@ -6,56 +6,71 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
-import CheckBox from '@react-native-community/checkbox'
 
-export default function Login() {
-const [toggleCheckBox, setToggleCheckBox] = useState(false)
+export default function Cadastro() {
 
 return (
   <View style={styles.background}>
-    <Text style={styles.txtlogin}>Login</Text>
+    <Text style={styles.txtlogin}>Cadastro</Text>
     
-    <Text style={styles.txtinput}>E-mail</Text>
+    <Text style={styles.txtinput}>Nome</Text>
     <TextInput
       style={styles.input}
-      placeholder="meuemail@hotmail.com"
+      placeholder="Jane Cooper"
       placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
       autoCorrect={false}
       onChangeText={() => {}}
+    />
+
+    <Text style={styles.txtinput}>Email</Text>
+        <TextInput
+        style={styles.input}
+        placeholder="janecooper@gmail.com"
+        placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
+        autoCorrect={false}
+        onChangeText={() => {}}
     />
     
     <Text style={styles.txtinput}>Senha</Text>
     <TextInput
       style={styles.input}
-      placeholder="**************"
+      placeholder="************"
       placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
       autoCorrect={false}
       onChangeText={() => {}}
     />
-    <View style={styles.viewSenha}>
-      <CheckBox
-      disabled={false}
-      value={toggleCheckBox}
-      onValueChange={(newValue) => setToggleCheckBox(newValue)}
-      />
-      <Text style={{fontSize: 12, top: 8, marginRight: 135}}>Lembrar senha</Text>
 
-      <TouchableOpacity> 
-        <Text style={{fontSize: 12, top: 8, color:'#4169e1'}}> Esqueceu senha? </Text> 
-      </TouchableOpacity> 
+    <Text style={styles.txtinput}>Confirmar senha</Text>
+    <TextInput
+      style={styles.input}
+      placeholder="************"
+      placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
+      autoCorrect={false}
+      onChangeText={() => {}}
+    />
 
-    </View>
-
-    <TouchableOpacity style={styles.btnSubmit}>
-      <Text style={styles.submitText}>ENTRAR</Text>
-    </TouchableOpacity>
+    <Text style={styles.txtinput}>Telefone</Text>
+    <TextInput
+      style={styles.input}
+      placeholder="(xx) xxxxx-xxxx"
+      placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
+      autoCorrect={false}
+      onChangeText={() => {}}
+    />
+    
+    
 
     <View style={styles.viewRegister}>
-      <Text style={styles.textRegister}>Se ainda não é membro, </Text>
+      <Text style={styles.textRegister}>Ao se cadastrar voce concorda com os </Text>
       <TouchableOpacity> 
-        <Text style={styles.registerText}>cadastre-se </Text> 
+        <Text style={styles.registerText}>termos de uso </Text> 
       </TouchableOpacity> 
     </View>
+
+      <TouchableOpacity style={styles.btnSubmit}>
+      <Text style={styles.submitText}>CADASTRAR</Text>
+    </TouchableOpacity>
+    
 </View>
 );
 }
@@ -63,21 +78,12 @@ return (
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+    backgroundColor: '#FFF',
     alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#FFF'
-  },
-
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '90%',
-    paddingBottom: 50
   },
 
   input: {
-    borderBottomColor: '#A9A9A9',
+    borderBottomColor: '#849A87',
     borderBottomWidth: 1,
     width: '85%',
     marginBottom: 5,
@@ -93,7 +99,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 7,
-    marginTop: 30,
+    marginTop: 5
   },
   
   submitText:{
@@ -107,13 +113,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto-Black',
     color: '#4169e1',
     flexDirection: "row",
-    fontSize: 16
+    fontSize: 14
   },
 
   textRegister:{
     fontFamily: 'Roboto-Black',
     color: '#A9A9A9',
-    fontSize: 16,
+    fontSize: 14,
   },
 
   txtlogin:{
@@ -122,7 +128,8 @@ const styles = StyleSheet.create({
   lineHeight: 40,
   fontSize: 28,
   color: '#535353',
-  marginBottom: 50
+  marginBottom: 25,
+  marginTop: 40
   },
 
   txtinput:{
@@ -132,14 +139,15 @@ const styles = StyleSheet.create({
     lineHeight: 16,
     letterSpacing: -0.41,
     color: '#535353',
-    right: '36%',
     marginTop: 15,
-    marginBottom: 2
+    marginBottom: 5,
+    width: '83%',
+    paddingBottom: -10
   },
   
   viewRegister:{
     flexDirection: 'row',
-    marginTop: 60,
+    marginTop: 75,
   },
 
   viewSenha:{
