@@ -1,9 +1,21 @@
-import React from 'react';
-import Aguarde from './src/pages/aguarde';
-import Cadastro from './src/pages/inscreva';
+/*import React, {useState, useEffect} from 'react';
+import Routes from './src/pages/routes';
+
 
 export default function App() {
-    return(
-        <Cadastro/>
-    )
+  return (
+    <Routes/>
+  )
+}*/
+
+import React, {useState, useEffect} from 'react';
+import ConfirmacaoCodigo from './src/pages/confirmacaocodigo';
+import EnviarCodigo from './src/pages/enviarcodigo';
+import Routes from './src/pages/routes';
+
+
+export default function App() {
+  return (
+    <ConfirmacaoCodigo/>
+  )
 }

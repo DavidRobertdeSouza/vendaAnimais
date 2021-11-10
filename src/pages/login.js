@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox'
 
-export default function Login() {
+export default function Login({navigation}) {
 const [toggleCheckBox, setToggleCheckBox] = useState(false)
 
 return (
@@ -46,13 +46,18 @@ return (
 
     </View>
 
-    <TouchableOpacity style={styles.btnSubmit}>
+    <TouchableOpacity 
+    style={styles.btnSubmit} 
+    onPress={() => navigation.navigate('Aguarde')}     
+    >
       <Text style={styles.submitText}>ENTRAR</Text>
     </TouchableOpacity>
 
     <View style={styles.viewRegister}>
       <Text style={styles.textRegister}>Se ainda não é membro, </Text>
-      <TouchableOpacity> 
+      <TouchableOpacity 
+        onPress={() => navigation.navigate('Inscreva')}     
+      >
         <Text style={styles.registerText}>cadastre-se </Text> 
       </TouchableOpacity> 
     </View>

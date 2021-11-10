@@ -6,7 +6,7 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default function Aguarde() {
+export default function Aguarde({navigation}) {
 
 
   return (

@@ -4,9 +4,10 @@ import {
   Image,
   Text,
   StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 
-export default function BemVindo() {
+export default function BemVindo({navigation}) {
 
 
   return (
@@ -18,10 +19,15 @@ export default function BemVindo() {
           height: 234,
         }}
         source={require('../assets/image/123.png')} />
+        <TouchableOpacity 
+        style={styles.footer}
+        onPress={() => navigation.navigate('Login')}   
+        > 
         <Text style={styles.footer}>
           Desenvolvido por Empresa {'\n'}
           2021
         </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -35,6 +41,11 @@ const styles = StyleSheet.create({
 
   containerLogo: {
     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  containerfooter: {
     justifyContent: 'center',
     alignItems: 'center',
   },

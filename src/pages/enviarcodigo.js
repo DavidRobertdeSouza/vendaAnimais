@@ -7,49 +7,13 @@ import {
   StyleSheet,
 } from 'react-native';
 
-export default function Inscreva({navigation}) {
+export default function EnviarCodigo({navigation}) {
 
 return (
   <View style={styles.background}>
-    <Text style={styles.txtlogin}>Cadastro</Text>
+    <Text style={styles.txtlogin}>Confirmação</Text>
     
-    <Text style={styles.txtinput}>Nome</Text>
-    <TextInput
-      style={styles.input}
-      placeholder="Jane Cooper"
-      placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
-      autoCorrect={false}
-      onChangeText={() => {}}
-    />
-
-    <Text style={styles.txtinput}>Email</Text>
-        <TextInput
-        style={styles.input}
-        placeholder="janecooper@gmail.com"
-        placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
-        autoCorrect={false}
-        onChangeText={() => {}}
-    />
-    
-    <Text style={styles.txtinput}>Senha</Text>
-    <TextInput
-      style={styles.input}
-      placeholder="************"
-      placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
-      autoCorrect={false}
-      onChangeText={() => {}}
-    />
-
-    <Text style={styles.txtinput}>Confirmar senha</Text>
-    <TextInput
-      style={styles.input}
-      placeholder="************"
-      placeholderTextColor= 'rgba(83, 83, 83, 0.4)'
-      autoCorrect={false}
-      onChangeText={() => {}}
-    />
-
-    <Text style={styles.txtinput}>Telefone</Text>
+    <Text style={styles.txtinput}>Insira o número de telefone para receber o código</Text>
     <TextInput
       style={styles.input}
       placeholder="(xx) xxxxx-xxxx"
@@ -57,18 +21,10 @@ return (
       autoCorrect={false}
       onChangeText={() => {}}
     />
-    
-    <View style={styles.viewRegister}>
-      <Text style={styles.textRegister}>Ao se cadastrar voce concorda com os </Text>
-      <TouchableOpacity> 
-        <Text style={styles.registerText}>termos de uso </Text> 
-      </TouchableOpacity> 
-    </View>
 
-      <TouchableOpacity 
-      style={styles.btnSubmit}
-      onPress={() => navigation.navigate('EnviarCodigo')}>
-      <Text style={styles.submitText}>CADASTRAR</Text>
+
+      <TouchableOpacity style={styles.btnSubmit}>
+      <Text style={styles.submitText}>ENVIAR CÓDIGO</Text>
     </TouchableOpacity>
     
 </View>
@@ -99,7 +55,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 7,
-    marginTop: 5
+    marginTop: 60
   },
   
   submitText:{
@@ -123,13 +79,13 @@ const styles = StyleSheet.create({
   },
 
   txtlogin:{
-  fontFamily: 'Roboto-Black',
+  fontFamily: 'Roboto-Bold',
   fontStyle: 'normal',
   lineHeight: 40,
   fontSize: 28,
   color: '#535353',
   marginBottom: 25,
-  marginTop: 40
+  marginTop: '50%'
   },
 
   txtinput:{
@@ -141,8 +97,6 @@ const styles = StyleSheet.create({
     color: '#535353',
     marginTop: 15,
     marginBottom: 5,
-    width: '83%',
-    paddingBottom: -10
   },
   
   viewRegister:{
