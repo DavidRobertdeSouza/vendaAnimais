@@ -1,11 +1,13 @@
 import React from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import BemVindo from './bem-vindo';
-import Login from './login';
-import Aguarde from './aguarde';
-import Inscreva from './inscreva'
-import EnviarCodigo from './enviarcodigo';
+import BemVindo from './bemvindo/bem-vindo';
+import Login from './login/login';
+import Aguarde from './aguarde/aguarde';
+import Inscreva from './inscreva/inscreva';
+import EnviarCodigo from './enviarcodigo/enviarcodigo';
+import ConfirmacaoCodigo from './confirmacaocodigo/confirmacaocodigo';
+import RegistroEfetuado from './registroefetuado/registroefetuado';
 
 export default function Routs() {
   const AuthRoute = createAppContainer(
@@ -48,6 +50,20 @@ export default function Routs() {
       },
       EnviarCodigo:{
         screen: EnviarCodigo,
+        navigationOptions:{
+            headerTransparent: true,
+            headerTitle: ''
+        }
+      },
+      ConfirmacaoCodigo:{
+        screen: ConfirmacaoCodigo,
+        navigationOptions:{
+            headerTransparent: true,
+            headerTitle: ''
+        }
+      },
+      RegistroEfetuado:{
+        screen: RegistroEfetuado,
         navigationOptions:{
             headerTransparent: true,
             headerTitle: ''
